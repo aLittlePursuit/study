@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>指令v-text</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+    <script src="jq/velocity.min.js"></script>
+</head>
+<body>
+    <div id="test">
+        <span v-text="msg">1、</span><br>
+        <!-- 和下面的一样,又有区别 -->
+        <span>2、{{msg}}</span>
+    </div>
+</body>
+<script>
+    $(function() {
+        new Vue({
+            el: '#test',
+            data: {
+                msg: '<h3>你好世界！</h3>'
+            }
+        });
+    });
+</script>
+</html>

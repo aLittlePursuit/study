@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>feild3</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <div>自定义内容（例如添加验证码）</div>
+    <mt-field label="验证码" v-model="captcha" placeholder="请输入验证码">
+        <img src="test.jpg" height="45px" width="100px">
+    </mt-field>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app',
+        data() {
+            return {
+                captcha: ''
+            }
+        }
+    });
+</script>
+</html>

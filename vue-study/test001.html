@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>声明式渲染</title>
+    <script src="jq/vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="example">
+      <p v-bind:title="message">
+       p标签的title属性是一个日期对象
+      </p>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#example',
+      data: {
+        message: new Date()
+      }
+    });
+  </script>
+</html>
+<!--
+属性的绑定都用的是 在开始标签中 v-bind:属性名="参数名"
+属性绑定的简写形式 在开始标签中 :属性名="参数名"
+-->

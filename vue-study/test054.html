@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+    <script src="jq/velocity.min.js"></script>
+    <style>
+        .personal {
+            background-color: rgba(0,0,0,.5);
+            margin: 10px 0;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<!--v-if 和 v-show的区别就在于if判断条件如果为假则删除整个标签（既标签不存在）
+v-show则是如果条件为假则样式display：none；-->
+<div id="test">
+    <div class="personal" v-for="student in students">
+        <lable v-text="student.name"></lable>
+        <span v-text="student.age"></span>
+    </div>
+</div>
+<!--v-if  v-else-if  v-else-->
+
+</body>
+<script>
+    $(function() {
+        new Vue({
+            el: '#test',
+            data: {
+                students: [
+                    {
+                        name: '小明',
+                        age: 22
+                    },
+                    {
+                        name: '小花',
+                        age: 21
+                    },
+                    {
+                        name: '小里',
+                        age: 20
+                    },
+                    {
+                        name: '小碰',
+                        age: 19
+                    },
+                    {
+                        name: '小封',
+                        age: 18
+                    },
+                    {
+                        name: '小无',
+                        age: 17
+                    },
+                    {
+                        name: '小抗',
+                        age: 16
+                    },
+                    {
+                        name: '小还',
+                        age: 15
+                    }
+                ]
+            }
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>表单控件绑定(复选框)</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+</head>
+<body>
+    <!--单个勾选框，逻辑值-->
+    <div id="test" style="margin-bottom: 200px;">
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{ checked }}</label>
+    </div>
+
+
+    <!--多个勾选框，绑定到同一个数组-->
+    <div id="test1">
+        <input type="checkbox" value="Jack" v-model="checkedNames">
+        <label>Jack</label>
+        <input type="checkbox" value="John" v-model="checkedNames">
+        <label>John</label>
+        <input type="checkbox" value="Mike" v-model="checkedNames">
+        <label>Mike</label>
+        <br>
+        <span>Checked names: {{ checkedNames }}</span>
+    </div>
+</body>
+<script>
+    $(function() {
+        new Vue({
+            el: '#test',
+            data: {
+                checked: false
+            }
+        });
+
+        new Vue({
+            el: '#test1',
+            data: {
+                checkedNames: []
+            }
+        })
+    });
+</script>
+</html>

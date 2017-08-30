@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Chosen</title>
+    <link rel="stylesheet" href="css/zui.css">
+    <link rel="stylesheet" href="lib/chosen/chosen.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/zui.js"></script>
+    <script src="lib/chosen/chosen.js"></script>
+</head>
+<body>
+    <div style="width: 500px;">
+        <select name="" class="form-control aaa">
+            <option value=""">选择一种水果..</option>
+            <option value="" class="chosen-select">苹果</option>
+            <option value="" class="chosen-select">香蕉</option>
+            <option value="" class="chosen-select">菠萝</option>
+            <option value="" class="chosen-select">西瓜</option>
+            <option value="" class="chosen-select">甘蔗</option>
+            <option value="" class="chosen-select">哈密瓜</option>
+        </select>
+
+
+        <select name="" class="form-control bbb" multiple data-placeholder="请选择喜欢水果...">
+            <option value=""">选择一种水果..</option>
+            <option value="" class="chosen-select">苹果</option>
+            <option value="" class="chosen-select">香蕉</option>
+            <option value="" class="chosen-select">菠萝</option>
+            <option value="" class="chosen-select">西瓜</option>
+            <option value="" class="chosen-select">甘蔗</option>
+            <option value="" class="chosen-select">哈密瓜</option>
+        </select>
+    </div>
+</body>
+<script>
+    $(function() {
+        $('.aaa').chosen({
+            no_results_text: '没有找到',    // 当检索时没有找到匹配项时显示的提示文本
+            disable_search_threshold: 5, // 5 个以下的选择项则不显示检索框
+            search_contains: true         // 从任意位置开始检索
+        });
+
+        $('.bbb').chosen({
+            no_results_text: '没有找到',    // 当检索时没有找到匹配项时显示的提示文本
+            search_contains: true         // 从任意位置开始检索
+        });
+    });
+</script>
+</html>

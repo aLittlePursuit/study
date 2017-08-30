@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>animate()</title>
+    <script src="jq/jquery-1.9.1.js" charset="utf-8"></script>
+    <style media="screen">
+      .square {
+        width: 100px;
+        height: 100px;
+        background: orange;
+        text-align: center;
+        line-height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="">
+      <button id="animate">animate</button>
+      <div id="animateDIV" class="square"></div>
+    </div>
+
+    <div class="" style="position: relative;">
+      <button id="animate1">animate1</button>
+      <div id="animateDIV1" class="square" style="position: absolute;">hello</div>
+    </div>
+
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $("#animate").click(function(){
+        $("#animateDIV").animate({height:'300px',opacity:'0.4'},"slow")
+                        .animate({width:'300px',opacity:'0.8'},"slow")
+                        .animate({height:'100px',opacity:'0.4'},"slow")
+                        .animate({width:'100px',opacity:'0.8'},"slow");
+      });
+
+      $("#animate1").click(function(){
+        $("#animateDIV1").animate({left: '300px'},"slow")
+                         .animate({fontSize: '2em'},"slow");
+      });
+
+    });
+  </script>
+</html>
+<!--
+语法：$(selector).animate({params},speed,callback);
+必需的 params 参数定义形成动画的 CSS 属性
+-->

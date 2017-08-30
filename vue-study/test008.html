@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>计算属性</title>
+    <script src="jq/vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="one">
+      <p>original message: "{{ message }}"</p>
+      <p>Computed reversed message: "{{ reversedMessage }}"</p>
+      <input type="text" v-model="message">
+    </div>
+  </body>
+  <script type="text/javascript">
+    var vm = new Vue({
+      el: '#one',
+      data: {
+        message: 'hello'
+      },
+      computed: {
+        // a computed getter
+        reversedMessage: function () {
+          // `this` points to the vm instance
+          return this.message.split('').reverse().join('')
+        }
+      }
+    });
+
+    // 键盘回车事件
+    document.addEventListener('keydown', function(e){
+        if(e.keyCode == 13){
+            console.log(1);//你想执行的功能写在这里。
+            e.preventDefault();
+            return false;
+        }
+    }, false);
+  </script>
+</html>

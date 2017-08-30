@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>checklist3</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <h4>最多选项数达到后其他均不可再选</h4>
+    <mt-checklist title="最多选2个" :max="max" v-model="value" :options="options"></mt-checklist>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app',
+        data() {
+            return {
+                max: 2,
+                value: [],
+                options: [
+                    '选项A',
+                    '选项B',
+                    '选项C'
+                ]
+            }
+        }
+    });
+</script>
+</html>

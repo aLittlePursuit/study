@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script src="jq/jquery-1.9.1.js" charset="utf-8"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <!-- ECharts单文件引入 -->
+    <script src="jq/echarts.min.js"></script>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts图表
+        var myChart = echarts.init($('#main')[0]);
+
+        var option = {
+            width: 400,
+            height: 200,
+            tooltip: {
+                show: true
+            },
+            legend: {
+                data:['销量']
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    name: 'x轴坐标名称',
+                    data : ["2017/02/1400000","羊毛衫","雪纺衫","裤子","高跟鞋","袜子","内衣","毛衣"],
+                    axisLabel : {
+      				        interval : 0,  // 间隔
+      				        rotate : 45    // data内容旋转角度
+    				        }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    name: 'y轴坐标名称',
+                }
+            ],
+            series : [
+                {
+                    "name":"销量",
+                    "type":"bar",
+                    "data":[5, 20, 40, 10, 10, 20,30,10]
+                }
+            ]
+        };
+
+        // 为echarts对象加载数据
+        myChart.setOption(option);
+
+        // $('#main canvas').attr('height','450');
+
+    </script>
+</body>

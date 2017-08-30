@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>v-show</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+    <script src="jq/velocity.min.js"></script>
+</head>
+<body>
+
+<div id="test">
+    <div v-show="msg">show or hide</div>
+</div>
+
+</body>
+<script>
+    $(function() {
+        new Vue({
+            el: '#test',
+            data: {
+                msg: false
+            }
+        });
+    });
+</script>
+</html>

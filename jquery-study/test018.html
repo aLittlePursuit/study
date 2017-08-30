@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>祖先</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <style>
+        .ancestors *
+        {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    body (曾曾曾祖父)
+    <div class="ancestors">
+        .ancestors (曾曾祖父)
+        <div style="width:500px;">div (曾祖父)
+            <ul>ul (祖父)
+                <li>li (直接父)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+
+        <div style="width:500px;">div (祖父)
+            <p>p (直接父)
+                <span>span</span>
+            </p>
+        </div>
+    </div>
+    <button id="btn1">span.parent()</button>
+    <button id="btn2">span.parents()</button>
+    <button id="btn3">span.parentsUntil('.ancestors')</button>
+</body>
+<script>
+    $(document).ready(function() {
+        $('#btn1').click(function() {
+            $("span").parent().css({"color":"red","border":"2px solid red"});
+        });
+
+        $('#btn2').click(function() {
+            $("span").parents().css({"color":"red","border":"2px solid red"});
+        });
+
+        $('#btn3').click(function() {
+            $("span").parentsUntil('.ancestors').css({"color":"red","border":"2px solid red"});
+        });
+    });
+</script>
+</html>
+<!--
+这些 jQuery 方法很有用，它们用于向上遍历 DOM 树：
+parent() 方法返回被选元素的直接父元素。该方法只会向上一级对 DOM 树进行遍历。
+parents() 方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>)。
+parentsUntil() 返回介于两个给定元素之间的所有祖先元素。
+-->

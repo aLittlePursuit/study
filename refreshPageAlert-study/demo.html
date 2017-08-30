@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>f5-alert</title>
+</head>
+<body onload="RunOnBeforeUnload()">
+    <a href="http://www.baidu.com">http://www.baidu.com</a>
+</body>
+<script>
+  function RunOnBeforeUnload() {
+    window.onbeforeunload = function () {
+      return '';
+    }
+  }
+</script>
+</html>

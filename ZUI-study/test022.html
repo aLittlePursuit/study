@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>拖放排序</title>
+    <link rel="stylesheet" href="css/zui.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/zui.js"></script>
+    <script src="lib/sortable/zui.sortable.js"></script>
+    <style>
+        /* 为可拖动的条目应用可移动光标类型 */
+        #sortableList > .list-group-item {cursor: move}
+
+        /* 为正在被拖动的条目应用半透明外观 */
+        #sortableList > .list-group-item.dragging {
+            visibility: visible;
+            opacity: .3;
+        }
+    </style>
+</head>
+<body>
+    <div class="list-group" id="sortableList" style="width: 500px;">
+        <div class="list-group-item"><i class="icon-move"></i> 猫咪</div>
+        <div class="list-group-item"><i class="icon-move"></i> 小鸡</div>
+        <div class="list-group-item"><i class="icon-move"></i> 大黄</div>
+        <div class="list-group-item"><i class="icon-move"></i> 鹅鹅鹅</div>
+        <div class="list-group-item"><i class="icon-move"></i> 猪王</div>
+    </div>
+</body>
+<script>
+    $(function() {
+        $('#sortableList').sortable();
+    });
+</script>
+</html>

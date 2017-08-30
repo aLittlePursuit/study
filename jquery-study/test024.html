@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax、GET、POST</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+</head>
+<body>
+    <button id="btn1">向页面发送 HTTP GET 请求，然后获得返回的结果</button>
+    <button id="btn2">向页面发送 HTTP POST 请求，然后获得返回的结果</button>
+</body>
+<script>
+    $(document).ready(function() {
+        $('#btn1').click(function() {
+            $.get('txt/test000.txt',function(data,status) {
+                alert("数据：" + data + "\n状态：" + status);
+            });
+        });
+
+        $('#btn2').click(function() {
+            $.post('txt/test000.txt',{
+                name: 'donald duck',
+                city: 'ducking'
+            },
+            function(data,status) {
+                alert("数据：" + data + "\n状态：" + status);
+            });
+        });
+    });
+</script>
+</html>
+<!--
+两种在客户端和服务器端进行请求-响应的常用方法是：GET 和 POST。
+GET - 从指定的资源请求数据
+POST - 向指定的资源提交要处理的数据
+GET 基本上用于从服务器获得（取回）数据。注释：GET 方法可能返回缓存数据。
+POST 也可用于从服务器获取数据。不过，POST 方法不会缓存数据，并且常用于连同请求一起发送数据。
+
+$.get() 方法通过 HTTP GET 请求从服务器上请求数据。
+语法：$.get(URL,callback);
+$.post() 方法通过 HTTP POST 请求从服务器上请求数据。
+语法：$.post(URL,data,callback);
+-->

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>popup5</title>
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .square {
+            text-align: center;
+            line-height: 50px;
+            width: 100px;
+            height: 50px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <mt-button @click.native="handleClick">Button</mt-button>
+    <mt-popup v-model="show" class="square">popup</mt-popup>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app',
+        data() {
+            return {
+                show: false
+            }
+        },
+        methods: {
+            handleClick() {
+                this.show = true
+            }
+        }
+    });
+</script>
+</html>

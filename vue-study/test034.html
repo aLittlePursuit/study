@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义</title>
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <button @click="show = !show">
+            Toggle render
+        </button>
+        <transition
+                name="sss"
+                enter-active-class="tada"
+                leave-active-class="bounceOutRight"
+        >
+            <p v-if="show">hello</p>
+        </transition>
+    </div>
+</body>
+<script>
+    $(function() {
+        new Vue({
+            el:'#test',
+            data: {
+                show: true
+            }
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>scroll</title>
+    <link rel="stylesheet" href="jquery.mCustomScrollbar.css">
+    <style>
+        .content{
+            width:260px;
+            height:480px;
+            overflow:hidden;
+            -webkit-border-radius:3px;
+            -moz-border-radius:3px;
+            border-radius:3px;
+            float:left;
+            background: orange;
+        }
+        .content p:nth-child(even){
+            font-family:Georgia,serif;
+            font-size:17px;
+            font-style:italic;
+        }
+        .mCSB_container {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .mCustomScrollBox>.mCSB_scrollTools {
+            width: 10px;
+        }
+        .mCSB_scrollTools .mCSB_draggerRail {
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="content" class="content">
+        <h2>Theme: light (default)</h2>
+        <p>Lorem ipsum dolor sit amet. Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit.</p>
+        <p>Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti. </p>
+        <p>Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti. </p>
+        <p>Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti. </p><p>Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti. </p>
+        <p>Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti. </p>
+        <p>Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti. </p>
+        <p>Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti. </p>
+    </div>
+</body>
+</html>
+<script src="jquery-1.9.1.js"></script>
+<script src="jquery.mCustomScrollbar.concat.min.js"></script>
+<script>
+    $(function() {
+        $("#content").mCustomScrollbar();
+    });
+//    setInterval('addContent()',1000);
+    function addContent() {
+        var str = '<p>Aliquam erat volutpat. Maecenas non tortor nulla, non malesuada velit. Nullam felis tellus, tristique nec egestas in, luctus sed diam. Suspendisse potenti. </p>';
+        $('.mCSB_container').append(str);
+        $("#content").mCustomScrollbar("update");
+    }
+</script>

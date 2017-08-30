@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chaining链接</title>
+    <script src="jq/jquery-1.9.1.js" charset="utf-8"></script>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #p1 {
+        width: 100px;
+        height: 200px;
+        background: orange;
+        text-align: center;
+        line-height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <p id="p1">hello</p>
+
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#p1").css("color","red").slideUp(2000).slideDown(2000);
+    });
+  </script>
+</html>

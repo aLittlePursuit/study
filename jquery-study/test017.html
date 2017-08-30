@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>尺寸</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+</head>
+<body>
+    <div id="div1" style="height:100px;width:300px;padding:10px;margin:3px;border:1px solid blue;background-color:lightblue;"></div>
+    <button id="btn1">显示 div 的尺寸(不包括内边距)</button>
+    <button id="btn2">显示 div 的尺寸(包括内边距)</button>
+    <button id="btn3">显示 div 的尺寸(包括内边距、边框)</button>
+    <button id="btn4">显示文档尺寸</button>
+    <button id="btn5">显示窗口尺寸</button>
+</body>
+<script>
+    $(document).ready(function() {
+
+        $("#btn1").click(function(){
+            $("#div1").html("宽度：" + $("#div1").width() + "</br>" + "高度：" + $("#div1").height());
+        });
+
+        $('#btn2').click(function() {
+            $("#div1").html("宽度：" + $("#div1").innerWidth() + "</br>" + "高度：" + $("#div1").innerHeight());
+        });
+
+        $('#btn3').click(function() {
+            $("#div1").html("宽度：" + $("#div1").outerWidth() + "</br>" + "高度：" + $("#div1").outerHeight());
+        });
+
+        $('#btn4').click(function() {
+            $('#div1').html('document尺寸：' + $(document).width() + '*' + $(document).height());
+        });
+
+        $('#btn5').click(function() {
+            $('#div1').html('window尺寸：' + $(window).width() + '*' + $(window).height());
+        });
+
+    });
+</script>
+</html>
+<!--
+jQuery 提供多个处理尺寸的重要方法：
+width()
+height()
+innerWidth()
+innerHeight()
+outerWidth()
+outerHeight()
+-->

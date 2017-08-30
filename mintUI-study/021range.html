@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>range</title>
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <input type="text" :value="rangeValue">
+    <mt-range v-model="rangeValue" :min="0" :max="100" :step="10" :bar-height="2" :disabled="true" >
+        <div slot="start">0</div>
+        <div slot="end">100</div>
+    </mt-range>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app',
+        data() {
+            return {
+                rangeValue: 0
+            }
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>拖放</title>
+    <link rel="stylesheet" href="css/zui.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/zui.js"></script>
+</head>
+<body>
+    <div class="row" id="droppableContainer">
+        <div class="col-sm-3">
+            <div class="panel">
+                <div class="panel-heading">开始吧</div>
+                <div class="panel-body" style="height: 120px; text-align: center; line-height: 80px">
+                    <button type="button" class="btn btn-danger btn-lg" id="droppableBtn"><i class="icon icon-move"></i> 拖动我</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel droppable-target">
+                <div class="panel-heading">拖动到这里。</div>
+                <div class="panel-body" style="height: 120px">
+                    <div class="area-name">A</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel droppable-target">
+                <div class="panel-heading">这里。</div>
+                <div class="panel-body" style="height: 120px">
+                    <div class="area-name">B</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel droppable-target">
+                <div class="panel-heading">或这里。</div>
+                <div class="panel-body" style="height: 120px">
+                    <div class="area-name">C</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function() {
+        $('#droppableBtn').droppable({
+            target: '.droppable-target',
+            start: function() {
+                $('#droppableContainer .droppable-target').removeClass('panel-warning').removeClass('panel-success').find('.panel-heading').text('拖动到这里吗？');
+            },
+            drag: function(event) {
+                $('#droppableContainer .droppable-target').removeClass('panel-success').removeClass('panel-warning');
+                if(event.target) {
+                    event.target.addClass('panel-warning');
+                }
+            },
+            drop: function(event) {
+                var msg = '真棒！';
+                $('#droppableContainer .droppable-target').removeClass('panel-success').removeClass('panel-warning');
+                if(event.target) {
+                    event.target.addClass('panel-success').find('.panel-heading').text('成功拖到目的地。');
+                    msg += '成功拖动到区域 ' + event.target.find('.area-name').text();
+                }
+                $.zui.messager.show(msg);
+            }
+        });
+    });
+</script>
+</html>

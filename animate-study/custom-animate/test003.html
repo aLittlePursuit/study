@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>test003</title>
+    <style>
+        .wrapper {
+            width: 400px;
+            height: 600px;
+            overflow: hidden;
+            background: orange;
+        }
+        .one,.two {
+            width: 100%;
+            text-align: center;
+            color:  #fff;
+        }
+        .one {
+            position: relative;
+            height: 44px;
+            line-height: 44px;
+            background: blue;
+            z-index: 10;
+        }
+        .two {
+            display: none;
+            height: 200px;
+            line-height: 200px;
+            background: red;
+        }
+        .change {
+            animation: change 2s;
+        }
+        @keyframes change {
+            0% {
+                opacity: 0;
+                transform: translate3d(0,-100%,0);
+            }
+            100% {
+                opacity: 1;
+                transform: translate3d(0,0,0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="one">11111</div>
+        <div class="two">22222</div>
+    </div>
+</body>
+<script src="jq/jquery-1.9.1.js" charset="utf-8"></script>
+<script>
+    $('.one').click(function() {
+        $('.two').toggle().addClass('change');
+    });
+</script>
+</html>

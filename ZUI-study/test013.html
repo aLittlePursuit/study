@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>对话框触发器</title>
+    <link rel="stylesheet" href="css/zui.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/zui.js"></script>
+</head>
+<body>
+    <div>
+        <!-- 使用data-remote属性 -->
+        <button type="button" class="btn btn-primary" data-remote="test001.html" data-toggle="modal">Ajax对话框</button>
+
+        <!-- 使用data-type 和data-url属性 -->
+        <button type="button" class="btn btn-primary" data-type="ajax" data-url="test005.html" data-toggle="modal">Ajax对话框</button>
+    </div>
+
+    <div>
+        <!-- 使用data-iframe属性 -->
+        <button type="button" class="btn btn-primary" data-iframe="test001.html" data-toggle="modal">iframe对话框</button>
+
+        <!-- 使用data-type 和data-url属性 -->
+        <button type="button" class="btn btn-primary" data-type="iframe" data-url="test005.html" data-toggle="modal">iframe对话框≶/button>
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-primary" data-moveable="true" data-toggle="modal" data-custom="..."><i class="icon icon-move"></i> 打开我 拖动我</button>
+    </div>
+
+</body>
+</html>

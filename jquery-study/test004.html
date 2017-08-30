@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>fadeIn()、fadeOut()、fadeToggle()、fadeTo()</title>
+    <script src="jq/jquery-1.9.1.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <div class="">
+      <p id="fadein" style="display: none;">12345678910</p>
+      <button id="fadeIn">fadeIn</button>
+    </div>
+
+    <div class="">
+      <p id="fadeout">12345678910</p>
+      <button id="fadeOut">fadeOut</button>
+    </div>
+
+    <div class="">
+      <p id="fadetoggle">12345678910</p>
+      <button id="fadeToggle">fadeToggle</button>
+    </div>
+
+    <div class="">
+      <p id="fadeto">12345678910</p>
+      <button id="fadeTo">fadeTo</button>
+    </div>
+
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $('#fadeIn').click(function() {
+        $('#fadein').fadeIn();
+      });
+
+      $('#fadeOut').click(function() {
+        $('#fadeout').fadeOut();
+      });
+
+      $('#fadeToggle').click(function() {
+        $('#fadetoggle').fadeToggle();
+      });
+
+      $('#fadeTo').click(function() {
+        $('#fadeto').fadeTo('slow',0.4);
+      });
+
+    });
+  </script>
+</html>
+<!-- 语法：$(selector).fadeIn(speed,callback); -->
+<!-- fadeTo语法：$(selector).fadeTo(speed,opacity,callback); -->

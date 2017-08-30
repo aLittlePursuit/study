@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>条件与循环</title>
+    <script src="jq/vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="example">
+      <ol>
+        <li v-for="selfname in todos">
+          {{ selfname.text }}
+        </li>
+      </ol>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#example',
+      data: {
+        todos: [
+          { text: 'Learn JavaScript' },
+          { text: 'Learn Vue' },
+          { text: 'Build something awesome' }
+        ]
+      }
+    });
+  </script>
+</html>
+<!--
+循环语句的绑定形式是 在开始标签中 v-for="自定义名 in 参数名"
+然后在起始和结束标签之间 {{ 自定义名.参数名下的参数名 }}
+-->

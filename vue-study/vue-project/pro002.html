@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>details</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/vue.css">
+    <script src="../jq/jquery-1.9.1.js"></script>
+    <script src="../jq/vue.js"></script>
+    <script src="js/laypage/laypage.js"></script>
+</head>
+<body>
+    <div class="contanier">
+        <div class="wrap">
+            <h1>{{ data.title }}</h1>
+            <div>
+                作者：<a v-bind:href="data.author.avatar_url" target="_blank" v-text="data.author.loginname"></a>
+                日期：{{ data.create_at | time }}
+            </div>
+            <div v-html="data.content"></div>
+            <h3>留言评论</h3>
+            <ul class="list">
+                <li v-for="info in data.replies">
+                    <i class="user_ico">
+                        <img v-bind:src="info.author.avatar_url" v-bind:alt="info.author.loginname">
+                        <span v-text="info.author.loginname"></span>
+                    </i>
+                    <time class="time" v-text="info.create_at | time"></time>
+                    <div class="talk" v-html="info.content"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(function() {
+        $(function() {
+            var id = getUrlId();
+            var url = 'http://cnodejs.org/api/v1/topics?page='+id;
+
+            $.ajax({
+                url: url,
+                dataType: 'json',
+                success: function (result) {
+                    console.log(result);
+                    new Vue({
+                        el: '.wrap',
+                        data: result
+                    });
+                }
+            });
+
+            function getUrlId(){
+                var host = window.location.href;
+                var id = host.substring(host.indexOf("?")+1,host.length);
+                return id;
+            }
+        });
+
+    });
+</script>
+</html>

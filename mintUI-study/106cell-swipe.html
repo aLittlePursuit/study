@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>cell</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <mt-cell-swipe
+        title="标题文字"
+        :right="[
+    {
+      content: 'Delete',
+      style: { background: 'red', color: '#fff' },
+      handler: () => this.$messagebox('delete')
+    }
+  ]"></mt-cell-swipe>
+
+    <mt-cell-swipe title="向右滑动" :right="right"></mt-cell-swipe>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app',
+        data() {
+            return {
+                right: [
+                    {
+                        content: '删除',
+                        style: { background: 'red', color: '#fff' },
+                        handler: () => this.$messagebox('确定删除')
+                    }
+                ]
+            }
+        }
+    });
+</script>
+</html>

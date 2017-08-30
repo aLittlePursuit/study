@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>按键修饰符</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <!-- 只有在 keyCode 是 13 时调用 vm.submit() -->
+        <input v-on:keyup.13="submit" type="text">
+
+        <!-- 同上 -->
+        <input v-on:keyup.enter="submit" type="text">
+
+        <!-- 缩写语法 -->
+        <input @keyup.enter="submit" type="text">
+    </div>
+</body>
+<script>
+    $(function() {
+        var vm = new Vue({
+            el: '#test',
+            methods: {
+                submit: function() {
+                    alert('提交成功');
+                }
+            }
+        });
+    });
+</script>
+</html>
+<!--
+全部的按键别名：
+.enter
+.tab
+.delete (捕获 “删除” 和 “退格” 键)
+.esc
+.space
+.up
+.down
+.left
+.right
+
+可以通过全局 config.keyCodes 对象自定义按键修饰符别名：
+可以使用 v-on:keyup.f1
+Vue.config.keyCodes.f1 = 112
+-->

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>editor富文本编辑form提交</title>
+    <script src="js/jquery-1.9.1.js" charset="utf-8"></script>
+    <script src="ueditor/ueditor.config.js" charset="utf-8"></script>
+    <script src="ueditor/ueditor.all.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <!-- 加载编码器的容器 -->
+    <script id="test2" name="content" type="text/plain"></script>
+    <button id="btn" type="button" name="button">发表</button>
+    <button id="hide" type="button" name="button">隐藏</button>
+    <button id="show" type="button" name="button">显示</button>
+    <button id="selectorContent" type="button" name="button">选中内容</button>
+    <script type="text/javascript">
+      // <!-- 实例化编辑器 -->
+      var editorForm = UE.getEditor('test2',{
+        // 隐藏路径
+        elementPathEnabled: false
+      });
+      $('#btn').on('click',function(){
+        // 获取编辑器html内容
+        alert(editorForm.getContent());
+        // 获取纯文本内容
+        alert(editorForm.getContentTxt());
+        // 获取保留格式的文本内容
+        alert(editorForm.getPlainTxt());
+        // 判断编辑器是否有内容
+        alert(editorForm.hasContents());
+      });
+      $('#selectorContent').on('mouseover',function(){
+        // 获得当前选中的文本
+        alert(editorForm.selection.getText());
+      });
+      // 隐藏文本框
+      $('#hide').on('click',function(){
+        editorForm.setHide();
+      });
+      // 显示文本框
+      $('#show').on('click',function(){
+        editorForm.setShow();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>数据请求</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../jq/jquery-1.9.1.js"></script>
+    <script src="../jq/vue.js"></script>
+    <style>
+        .aaa {
+            margin-bottom: 5px;
+        }
+        .bbb {
+            margin-left: 50px;
+        }
+        /*注：此写法是解决数据没有加载完成就不显示，防止出现{{}} 等*/
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="test">
+        <ul class="list-group">
+            <li class="aaa" v-for="con in listData" v-cloak="">
+                <h5>{{ con.mainTitle }}</h5>
+                <img :src="con.listSmallImage">
+                <p>
+                    <span>{{ con.activePrice }} 元</span>
+                    <span class="bbb">{{ con.sales }} 件</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    $(function() {
+
+        $.ajax({
+            url: "http://mai.17173.com/commodity/material/random/list/11382/1/9.jsonp",
+            dataType: "jsonp",
+            success: function (res) {
+                new Vue({
+                    el: '#test',
+                    data: res.data
+                });
+            }
+        });
+
+
+    });
+</script>
+</html>

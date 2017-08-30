@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>attr()、removeAttr()、remove()、empty()</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <style>
+        .btn {
+            background: red;
+        }
+        .wid {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button id="aaa" class="btn">attr</button><br>
+    <button id="bbb" class="btn" disabled="">removeAttr</button><br>
+    <button id="ccc" class="btn">empty</button><br>
+    <button id="ddd" class="btn wid">remove</button><br>
+    <button id="btn1">attr()</button>
+    <button id="btn2">removeAttr()</button>
+    <button id="btn3">empty()</button>
+    <button id="btn4">remove()</button>
+</body>
+<script>
+    $(document).ready(function() {
+        $('#btn1').click(function() {
+            $('#aaa').attr('disabled','');
+        });
+
+        $('#btn2').click(function() {
+            $('#bbb').removeAttr('disabled');
+        });
+
+        $('#btn3').click(function() {
+            $('#ccc').empty();
+        });
+
+        $('#btn4').click(function() {
+            $('button').remove('.btn'); // 不是移除类，而是移除所有类名是btn的button元素
+        });
+    });
+</script>
+</html>
+<!--
+attr() - 添加属性
+removeAttr() - 移除属性
+remove() - 删除被选元素（及其子元素）
+empty() - 从被选元素中删除子元素
+-->

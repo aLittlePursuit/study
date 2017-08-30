@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠</title>
+    <link rel="stylesheet" href="css/zui.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/zui.js"></script>
+</head>
+<body>
+    <p>
+        <button type="button" class="btn" data-toggle="collapse" data-target="#collapseExample">使用 data-target 属性</button>
+        <a href="#collapseExample" data-toggle="collapse" class="btn btn-link">直接使用 href 属性</a>
+    </p>
+    <div class="collapse" id="collapseExample">
+        <div class="bg-primary with-padding">
+            <p>被折叠元素内容。</p>
+            <p>多个触发元素可以指向同一个折叠内容。</p>
+        </div>
+    </div>
+</body>
+</html>

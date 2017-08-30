@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>checklist4</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <h4>选择框右对齐</h4>
+    <mt-checklist title="右对齐" align="right" v-model="value" :options="options"></mt-checklist>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app',
+        data() {
+            return {
+                max: 2,
+                value: [],
+                options: [
+                    '选项A',
+                    '选项B',
+                    '选项C'
+                ]
+            }
+        }
+    });
+</script>
+</html>

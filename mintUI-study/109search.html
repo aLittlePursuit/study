@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>search</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <div>
+        <h4>自定义搜索结果</h4>
+        <mt-search v-model="value">
+            <mt-cell v-for="item in result" :title="item.title" :value="item.value"></mt-cell>
+        </mt-search>
+    </div>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app',
+        data() {
+            return {
+                value: '',
+                result: [
+                    {'title': '结果1', 'value': '1'},
+                    {'title': '结果2', 'value': '2'},
+                    {'title': '结果3', 'value': '3'}
+                ]
+            }
+        }
+    });
+</script>
+</html>

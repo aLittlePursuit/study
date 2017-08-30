@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>列表渲染</title>
+    <script src="jq/vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <ul id="example">
+      <li v-for="(selfname,index) in items">
+        {{ parentMessage }} - {{ index }} - {{ selfname.message }}
+      </li>
+    </ul>
+  </body>
+  <script type="text/javascript">
+    var vm = new Vue({
+      el: '#example',
+      data: {
+        parentMessage: 'parent',
+        items: [
+          {message: 'foo'},
+          {message: 'bar'}
+        ]
+      }
+    });
+  </script>
+</html>

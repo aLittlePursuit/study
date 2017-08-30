@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>日历</title>
+    <link rel="stylesheet" href="css/zui.css">
+    <link rel="stylesheet" href="lib/calendar/zui.calendar.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/zui.js"></script>
+    <script src="lib/calendar/zui.calendar.js"></script>
+    <style>
+        .week-days {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calendar"></div>
+</body>
+<script>
+    $(function() {
+        $('#calendar').calendar();
+
+//        /* 增加一个事件 */
+//        var calendar = $('#calendar').data('zui.calendar');
+//        var newEvent = {title: '吃饭了', desc: '要吃更多', start: '2017-3-7 12:00', end: '2017-3-8 13:00'};
+//        calendar.addEvents(newEvent);
+    });
+</script>
+</html>

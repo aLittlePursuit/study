@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后代</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <style>
+        .descendants *
+        {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="descendants" style="width:500px;">div (当前元素)
+        <p>p (子)
+            <span>span (孙)</span>
+        </p>
+        <p>p (child)
+            <span>span (孙)</span>
+        </p>
+    </div>
+    <button id="btn1">children()</button>
+    <button id="btn2">find()</button>
+
+</body>
+<script>
+    $(document).ready(function() {
+        $('#btn1').click(function() {
+            $(".descendants").children().css({"color":"red","border":"2px solid red"});
+        });
+
+        $('#btn2').click(function() {
+            $(".descendants").find('span').css({"color":"red","border":"2px solid red"});
+        });
+    });
+</script>
+</html>
+<!--
+下面是两个用于向下遍历 DOM 树的 jQuery 方法：
+children()方法返回被选元素的所有直接子元素。
+find()方法返回被选元素的后代元素，一路向下直到最后一个后代。
+-->

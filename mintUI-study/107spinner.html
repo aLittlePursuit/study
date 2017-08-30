@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>spinner</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <div>
+        <h4>指定类型</h4>
+        <mt-spinner type="snake"></mt-spinner>
+        <mt-spinner type="double-bounce"></mt-spinner>
+        <mt-spinner type="triple-bounce"></mt-spinner>
+        <mt-spinner type="fading-circle"></mt-spinner>
+    </div>
+
+    <div>
+        <h4>传入参数</h4>
+        <mt-spinner :type="0"></mt-spinner>
+        <mt-spinner :type="1"></mt-spinner>
+        <mt-spinner :type="2"></mt-spinner>
+        <mt-spinner :type="3"></mt-spinner>
+    </div>
+
+    <div>
+        <h4>指定颜色</h4>
+        <mt-spinner color="#26a2ff"></mt-spinner>
+        <mt-spinner color="rgb(100, 100, 100)"></mt-spinner>
+        <mt-spinner color="yellow"></mt-spinner>
+    </div>
+
+    <div>
+        <h4>指定尺寸</h4>
+        <mt-spinner :size="10"></mt-spinner>
+    </div>
+
+    <div>
+        <h4>自定义</h4>
+        <mt-spinner :type="0" color="orange" :size="20"></mt-spinner>
+        <mt-spinner :type="1" color="red" :size="40"></mt-spinner>
+        <mt-spinner :type="2" color="blue" :size="60"></mt-spinner>
+        <mt-spinner :type="3" color="yellow" :size="80"></mt-spinner>
+    </div>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app'
+    });
+</script>
+</html>

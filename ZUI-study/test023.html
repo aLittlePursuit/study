@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>颜色选择器</title>
+    <link rel="stylesheet" href="css/zui.css">
+    <link rel="stylesheet" href="lib/colorpicker/zui.colorpicker.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/zui.js"></script>
+    <script src="lib/colorpicker/zui.colorpicker.js"></script>
+</head>
+<body>
+    <!-- 按钮选择器 -->
+    <input type="hidden" class="form-control" id="myColor2" name="myColor2" data-provide="colorpicker" value="#3280fC" data-pull-menu-right="false" data-btn-tip="主题颜色">
+
+    <!-- 使用输入组并提供输入框输入十六进制颜色值 -->
+    <div class="input-group">
+        <span class="input-group-addon">主题颜色</span>
+        <input type="text" class="form-control" id="myColor3" name="myColor3" data-provide="colorpicker" data-wrapper="input-group-btn" data-pull-menu-right="true" value="#3280fC" placeholder="请输入16进制颜色值，例如 #FF00DD">
+    </div>
+</body>
+</html>

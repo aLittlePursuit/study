@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <style>
+        * {
+            text-align: center;
+        }
+        #test_id * {
+            width: 300px;
+            border: 1px solid lightgray;
+            margin: 10px auto;
+            text-align: center;
+        }
+        .addClass {
+            border: 1px solid rebeccapurple !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="test_id">
+        <h1>h-1</h1>
+        <h2>h-2</h2>
+        <h3>h-3</h3>
+        <h4>h-4</h4>
+        <h5>h-5</h5>
+        <h6>h-6</h6>
+        <p class="test-class">p-1</p>
+        <p class="test-class">p-2</p>
+        <p class="test-class">p-3</p>
+        <p class="test-class">p-4</p>
+        <p class="test-class">p-5</p>
+        <p class="test-class">p-6</p>
+        <p class="test-class">p-7</p>
+        <p class="test-class">p-8</p>
+        <p class="test-class">p-9</p>
+        <p class="test-class">p-10</p>
+        <p class="test-class">p-11</p>
+        <p class="test-class">p-12</p>
+        <p class="test-class">p-13</p>
+        <p class="test-class">p-14</p>
+        <p class="test-class">p-15</p>
+        <p class="test-class">p-16</p>
+        <p class="test-class">p-17</p>
+        <p class="test-class">p-18</p>
+        <p class="test-class">p-19</p>
+        <p class="test-class">p-20</p>
+    </div>
+    <button>事件</button>
+</body>
+<script>
+    $(function() {
+        $('button').click(function() {
+//            $('*').addClass('addClass');
+//            $('p:first').addClass('addClass');
+//            $('p:last').addClass('addClass');
+//            $('p:even').addClass('addClass');
+//            $('p:odd').addClass('addClass');
+//            $('p:eq(3)').addClass('addClass');
+//            $('p').eq(3).addClass('addClass');
+//            $('p:gt(3)').addClass('addClass');
+//            $('p:lt(3)').addClass('addClass');
+//            $('p:not(:empty)').addClass('addClass');
+//            $(":header").addClass('addClass');      // :header选取所有h1-h6的标签
+//            $(":header,p,button").addClass('addClass');
+        });
+    });
+</script>
+</html>

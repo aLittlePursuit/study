@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的形式数据请求（推荐）</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../jq/jquery-1.9.1.js"></script>
+    <script src="../jq/vue.js"></script>
+    <style>
+        .aaa {
+            margin-bottom: 5px;
+        }
+        .bbb {
+            margin-left: 50px;
+        }
+        /*注：此写法是解决数据没有加载完成就不显示，防止出现{{}} 等*/
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="test">
+    <ul class="list-group">
+        <li class="aaa" v-for="con in content" v-cloak="">
+            <h5>{{ con.mainTitle }}</h5>
+            <img :src="con.listSmallImage">
+            <p>
+                <span>{{ con.activePrice }} 元</span>
+                <span class="bbb">{{ con.sales }} 件</span>
+            </p>
+        </li>
+    </ul>
+</div>
+</body>
+<script>
+
+    // 利用闭包可以更清晰完整的描述一个组件并且防止全局变量的冲突
+    $(function() {
+
+        // 声明一个对象
+        var indexObject = {};
+        // 给这个对象下的vue赋值 vue对象
+        indexObject.vue = new Vue({
+            el:'#test',
+            data: {
+                content: ''
+            },
+            methods:{}
+        });
+        // 给这个对象下的ajax赋值 ajax请求方法
+        indexObject.ajax = $.ajax({
+            type: 'POST',
+            url: 'http://mai.17173.com/commodity/material/random/list/11382/1/9.jsonp',
+            dataType: 'jsonp',
+            success: function(res){
+                // console.log(res.data.listData);
+                indexObject.vue.content = res.data.listData;
+            }
+        });
+
+        console.log(indexObject);
+
+    });
+</script>
+</html>

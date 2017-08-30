@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>事件修饰符</title>
+    <script src="jq/vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <!-- 阻止单机事件冒泡 -->
+    <a @click.stop="doThis"></a>
+
+    <!-- 提交事件不再重载页面 -->
+    <form @submit.prevent="onSubmit"></form>
+
+    <!-- 修饰符可以串联 -->
+    <a @click.stop.prevent="doThat"></a>
+
+    <!-- 只有修饰符 -->
+    <form @submit.prevent></form>
+
+    <!-- 添加事件侦听器时使用事件捕获模式 -->
+    <div @click.capture="doThis">...</div>
+
+    <!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 -->
+    <div @click.self="doThat">...</div>
+  </body>
+</html>

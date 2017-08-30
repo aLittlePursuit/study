@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>Toast2</title>
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <mt-button @click.native="handleClick">Button</mt-button>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app',
+        methods: {
+            handleClick() {
+                this.$toast({
+                    message: 'Hello world!',
+                    position: 'bottom',  // top,middle,bottom 默认middle
+                    duration: 5000       // 持续时间
+                })
+            }
+        }
+    });
+</script>
+</html>

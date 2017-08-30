@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Callback函数</title>
+    <script src="jq/jquery-1.9.1.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <button type="button">Hide</button>
+    <p>This is a paragraph with little content.</p>
+
+  </body>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("button").click(function(){
+      $("p").hide(1000,function(){
+        alert("The paragraph is now hidden");
+      });
+    });
+  });
+  </script>
+</html>
+<!--
+典型语法：$(selector).hide(speed,callback)
+由于 JavaScript 语句（指令）是逐一执行的 - 按照次序，动画之后的语句可能会产生错误
+或页面冲突，因为动画还没有完成。为了避免这个情况，您可以以参数的形式添加 Callback
+函数。
+-->

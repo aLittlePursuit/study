@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>日期选择</title>
+    <link rel="stylesheet" href="css/zui.css">
+    <link rel="stylesheet" href="lib/datetimepicker/datetimepicker.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="lib/datetimepicker/datetimepicker.js"></script>
+</head>
+<body>
+    <div style="width: 500px;">
+        <input type="text" readonly class="form-control form-datetime" placeholder="请选择输入一个日期+时间: yyyy-mm-dd  hh:ii">
+        <input type="text" readonly class="form-control form-date" placeholder="请选择输入一个日期: yyyy-mm-dd">
+        <input type="text" readonly class="form-control form-time" placeholder="请选择输入一个时间: hh-ii">
+    </div>
+</body>
+<script>
+    $(function() {
+        // 选择时间和日期
+        $(".form-datetime").datetimepicker({
+                weekStart: 1,
+                todayBtn:  1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 2,
+                forceParse: 0,
+                showMeridian: 1,
+                format: "yyyy-mm-dd hh:ii"
+        });
+
+
+        // 仅选择日期
+        $(".form-date").datetimepicker({
+                language:  "zh-CN",
+                weekStart: 1,
+                todayBtn:  1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 2,
+                minView: 2,
+                forceParse: 0,
+                format: "yyyy-mm-dd"
+        });
+
+        // 选择时间
+        $(".form-time").datetimepicker({
+                language:  "zh-CN",
+                weekStart: 1,
+                todayBtn:  1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 1,
+                minView: 0,
+                maxView: 1,
+                forceParse: 0,
+                format: 'hh:ii'
+        });
+    });
+</script>
+</html>

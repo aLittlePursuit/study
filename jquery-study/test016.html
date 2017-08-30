@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css()</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+</head>
+<body>
+    <h2>这是标题</h2>
+    <p style="background-color:#ff0000">这是一个段落。</p>
+    <p style="background-color:#00ff00">这是一个段落。</p>
+    <p style="background-color:#0000ff">这是一个段落。</p>
+    <button id="btn1">返回 p 元素的背景色</button>
+    <button id="btn2">设置 p 元素的背景色</button>
+    <button id="btn3">设置 多个p 元素的样式</button>
+</body>
+<script>
+    $(document).ready(function() {
+
+        $('#btn1').click(function() {
+            alert('background-color:' + $('p').css('background-color'));
+        });
+
+        $('#btn2').click(function() {
+            $('p').css('background-color','orange');
+        });
+
+        $('#btn3').click(function() {
+            $('p').css({
+                'background-color': 'yellow',
+                'font-size': '30px'
+            });
+        });
+    });
+</script>
+</html>
+<!--
+如需返回指定的 CSS 属性的值，请使用如下语法：
+css("propertyname");
+如需设置指定的 CSS 属性，请使用如下语法：
+css("propertyname","value");
+如需设置多个 CSS 属性，请使用如下语法：
+css({"propertyname":"value","propertyname":"value",...});
+-->

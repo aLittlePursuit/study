@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>同胞</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <style>
+        .siblings *
+        {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="siblings">
+        <div>div (父)
+            <h1>h1</h1>
+            <h2>h2</h2>
+            <h3>h3</h3>
+            <h4>h4</h4>
+            <h5>h5</h5>
+            <h6>h6</h6>
+        </div>
+    </div>
+    <button id="btn1">siblings()</button>
+    <button id="btn2">next()</button>
+    <button id="btn3">nextAll()</button>
+    <button id="btn4">nextUntil()</button>
+    <button id="btn5">prev()</button>
+    <button id="btn6">prevAll()</button>
+    <button id="btn7">prevUntil()</button>
+
+</body>
+<script>
+    $(document).ready(function() {
+        $('#btn1').click(function() {
+            $('h2').css({"color":"blue","border":"2px solid blue"});
+            $("h2").siblings().css({"color":"red","border":"2px solid red"});
+        });
+
+        $('#btn2').click(function() {
+            $('h2').css({"color":"blue","border":"2px solid blue"});
+            $("h2").next().css({"color":"red","border":"2px solid red"});
+        });
+
+        $('#btn3').click(function() {
+            $('h2').css({"color":"blue","border":"2px solid blue"});
+            $("h2").nextAll().css({"color":"red","border":"2px solid red"});
+        });
+
+        $('#btn4').click(function() {
+            $('h2').css({"color":"blue","border":"2px solid blue"});
+            $("h2").nextUntil('h6').css({"color":"red","border":"2px solid red"});
+        });
+
+        $('#btn5').click(function() {
+            $('h5').css({"color":"blue","border":"2px solid blue"});
+            $("h5").prev().css({"color":"red","border":"2px solid red"});
+        });
+
+        $('#btn6').click(function() {
+            $('h5').css({"color":"blue","border":"2px solid blue"});
+            $("h5").prevAll().css({"color":"red","border":"2px solid red"});
+        });
+
+        $('#btn7').click(function() {
+            $('h5').css({"color":"blue","border":"2px solid blue"});
+            $("h5").prevUntil('h1').css({"color":"red","border":"2px solid red"});
+        });
+    });
+</script>
+</html>
+<!--
+有许多有用的方法让我们在 DOM 树进行水平遍历：
+siblings()方法返回被选元素的所有同胞元素。
+next()方法返回被选元素的下一个同胞元素。
+nextAll()方法返回被选元素的所有跟随的同胞元素。
+nextUntil()方法返回介于两个给定参数之间的所有跟随的同胞元素。
+prev()
+prevAll()
+prevUntil()
+方法的工作方式与上面的方法类似，只不过方向相反而已：它们返回的是前面的同胞元素
+（在 DOM 树中沿着同胞元素向后遍历，而不是向前）。
+-->

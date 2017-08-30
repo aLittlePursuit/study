@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <style>
+        * {
+            text-align: center;
+        }
+        div,p {
+            width: 300px;
+            border: 1px solid lightgray;
+            margin: 10px auto;
+            text-align: center;
+        }
+        .addClass {
+            border: 1px solid rebeccapurple !important;
+        }
+        div {
+            height:100px;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com">www.baidu.com</a><br><br>
+    <p>ppp</p><br><br>
+    <img src="images/aaa.png" alt=""><br><br>
+    <img id="img" src="images/event.png" alt=""><br><br>
+    <input type="text"><br><br>
+    <button>事件</button><br><br>
+    <div>
+        1<br>
+        2<br>
+        3<br>
+        4<br>
+        5<br>
+        6<br>
+        7<br>
+        8<br>
+        9<br>
+    </div><br>
+    <textarea cols="100" rows="10">你是我天边最美的云彩</textarea><br><br>
+    <form action="">
+        <lable>firstname:</lable>
+        <input type="text"><br>
+
+        <lable>lastname:</lable>
+        <input type="text"><br>
+
+        <input type="submit" value="提交">
+    </form>
+</body>
+<script>
+    $(function() {
+
+//       向匹配元素附加一个或更多事件处理器 click、mouseover、mouseout、mouseenter、mouseleave
+//       mousemove、keydown、keypress、keyup
+//        $('button').bind('click',function() {
+//            $('p').addClass('addClass');
+//        });
+
+//        $('button').on('click',function() {
+//            $('p').addClass('addClass');
+//        });
+
+//       失去焦点
+//        $('input').blur(function() {
+//            $('p').addClass('addClass');
+//        });
+
+//       得到焦点
+//         $('input').focus(function() {
+//             $('p').addClass('addClass');
+//         });
+
+//      内容改变
+//        $('input').change(function() {
+//            $('p').addClass('addClass');
+//        });
+
+//      点击事件
+//        $('button').click(function() {
+//            $('p').addClass('addClass');
+//        });
+
+//      双击事件
+//        $('button').dblclick(function() {
+//            $('p').addClass('addClass');
+//        });
+
+//      错误事件，img标签的错误事件
+//        $('img').error(function() {
+//            alert(111);
+//        });
+
+//      pageX() pageY()属性是鼠标指针的位置，相对于文档的左边缘。
+//        $('p').on('mouseover',function(event) {
+//            console.log('X:'+ event.pageX + '---Y:' + event.pageY)
+//        });
+
+//      preventDefault() 方法阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
+//        $("a").click(function(event){
+//            event.preventDefault();
+//        });
+
+//      触发该事件的 DOM 元素
+//        $("p, button, input, a, img").click(function(event){
+//            alert("点击事件由一个 " + event.target.nodeName + " 元素触发");
+//        });
+
+//      显示出当对按钮元素的点击事件发生时的时间戳
+//        $("button").click(function(event){
+//            alert(event.timeStamp);
+//        });
+
+//      显示触发键盘的键值
+//        $("input").on('keydown',function(event){
+//            alert("Key: " + event.which);
+//        });
+
+//      当图像加载时，改变 p 元素的文本
+//        $("#img").load(function(){
+//            $('p').html('图像已加载');
+//        });
+
+//      对浏览器窗口调整事件
+//        $(window).resize(function() {
+//            console.log("尺寸改变");
+//        });
+
+//      触发div内元素的滚动时间
+//        $("div").scroll(function() {
+//            alert("已滚动");
+//        });
+
+//      选择事件，当选择一些内容时发生的事件
+//        $('textarea').select(function() {
+//            alert(11111)
+//        });
+
+//      表单提交事件
+//        $("form").submit(function(e){
+//            alert("Submitted");
+//        });
+
+//      规定被选元素要触发的事件。
+//        $("button").click(function(){
+//            $("textarea").trigger("select");
+//        })
+
+
+
+    });
+</script>
+</html>

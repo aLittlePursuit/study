@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>css过渡</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+    <style>
+        /* 可以设置不同的进入和离开动画 */
+        /* 设置持续时间和动画函数 */
+        .self-name-enter-active {
+            transition: all .8s ease;
+        }
+        .self-name-leave-active {
+            transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+        .self-name-enter, .self-name-leave-active {
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="test">
+        <button @click="show = !show">
+            Toggle render
+        </button>
+        <transition name="self-name">
+            <p v-if="show">一排排文字</p>
+        </transition>
+    </div>
+</body>
+<script>
+    $(function() {
+        new Vue({
+            el: '#test',
+            data: {
+                show: true
+            }
+        });
+    })
+</script>
+</html>
+<!--self-name  自定义的-->

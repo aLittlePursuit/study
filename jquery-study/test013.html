@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>after()、before()</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+</head>
+<body>
+    <div>
+        <img src="images/event.png" alt="">
+    </div>
+    <button id="btn1">before()</button>
+    <button id="btn2">after()</button>
+</body>
+<script>
+    $(document).ready(function() {
+        $('#btn1').click(function() {
+            $('img').before('<b>前面插入 </b>')
+        });
+
+        $('#btn2').click(function() {
+            $('img').after('<b> 后面插入</b>')
+        });
+    });
+</script>
+</html>
+<!--
+after() - 在被选元素之后插入内容
+before() - 在被选元素之前插入内容
+-->

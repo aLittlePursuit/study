@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>search</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <div>
+        <h4>基础用法</h4>
+        <mt-search v-model="value"></mt-search>
+    </div>
+
+    <div>
+        <h4>设置显示文字</h4>
+        <mt-search v-model="value" cancel-text="自定义" placeholder="自定义placeholder"></mt-search>
+    </div>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app',
+        data() {
+            return {
+                value: ''
+            }
+        }
+    });
+</script>
+</html>

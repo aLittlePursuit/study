@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>v-model</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+    <script src="jq/velocity.min.js"></script>
+</head>
+<body>
+
+<div id="test">
+    <h1 v-text="msg"></h1>
+    <h3>{{ msg }}</h3>
+    <input type="text" v-model="msg">
+</div>
+
+</body>
+<script>
+    $(function() {
+        new Vue({
+            el: '#test',
+            data: {
+                msg: ''
+            }
+        });
+    });
+</script>
+</html>

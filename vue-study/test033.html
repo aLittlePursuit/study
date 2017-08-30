@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>css动画</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+    <style>
+        .self-name-enter-active {
+            animation: self-name-in 2s;
+        }
+        .self-name-leave-active {
+            animation: self-name-out 2s;
+        }
+        @keyframes self-name-in {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes self-name-out {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(2);
+            }
+            100% {
+                transform: scale(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="test">
+        <button @click="show = !show">Toggle show</button>
+        <transition name="self-name">
+            <h3 v-if="show" style="text-align: center">Look at me!</h3>
+        </transition>
+    </div>
+</body>
+<script>
+    $(function() {
+        new Vue({
+            el: '#test',
+            data: {
+                show: true
+            }
+        });
+    });
+</script>
+</html>

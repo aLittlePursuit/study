@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>选择列表</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+</head>
+<body>
+    <!--单选列表-->
+    <div id="test" style="margin-bottom: 200px;">
+        <select v-model="selected">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+    </div>
+
+    <!--多选列表-->
+    <div id="test1">
+        <select v-model="selected" multiple>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <br>
+        <span>Selected: {{ selected }}</span>
+    </div>
+</body>
+<script>
+    $(function() {
+        var vm = new Vue({
+           el: '#test',
+            data: {
+               selected: ''
+            }
+        });
+
+        var vm1 = new Vue({
+            el: '#test1',
+            data: {
+                selected: ''
+            }
+        });
+    });
+</script>
+</html>

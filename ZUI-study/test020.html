@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>拖动</title>
+    <link rel="stylesheet" href="css/zui.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/zui.js"></script>
+    <style>
+        #draggableBox {
+            height: 340px;
+            background-color: #fafafa;
+            position: relative;
+        }
+        #draggableBtn {
+            position: absolute; /* 被拖动的元素必须设置 position 为 absolute */
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="draggableBox">
+        <button id="draggableBtn" type="button" class="btn btn-primary"><i class="icon-move"></i> <span id="printPosition">拖动我</span></button>
+    </div>
+</body>
+<script>
+    $(function() {
+        $('#draggableBtn').draggable({
+            container: '#draggableBox',
+            before: function() {
+                console.log('按下');
+            },
+            drag: function() {
+                console.log('拖动');
+            },
+            finish: function() {
+                console.log('抬起');
+            }
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>获得内容-text()、html()、val()</title>
+    <script src="jq/jquery-1.9.1.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <div class="">
+      <div id="test">hello world<br><br><br><br>你好世界!</div>
+      <button id="one">text()</button>
+      <button id="two">html()</button>
+    </div>
+
+    <div class="">
+      <div class="">
+        <label for="">姓名：</label>
+        <input id="test1" type="text" name="name" value="米老鼠">
+      </div>
+      <button id="three">val()</button>
+    </div>
+
+    <div class="">
+      <div class="">
+        <a id="baidu" href="http://www.baidu.com">www.baidu.com</a>
+      </div>
+      <button id="four">attr('href')</button>
+    </div>
+
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $('#one').click(function() {
+        alert($('#test').text());
+      });
+
+      $('#two').click(function() {
+        alert($('#test').html());
+      });
+
+      $('#three').click(function() {
+        alert($('#test1').val());
+      });
+
+      $('#four').click(function() {
+        alert($('#baidu').attr('href'));
+      });
+
+    });
+  </script>
+</html>
+<!--
+text() - 设置或返回所选元素的文本内容
+html() - 设置或返回所选元素的内容（包括 HTML 标记）
+val() - 设置或返回表单字段的值
+-->

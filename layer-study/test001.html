@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>基础</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <script src="jq/jquery-1.9.1.js" charset="utf-8"></script>
+    <script src="layer/layer.js" charset="utf-8"></script>
+    <style media="screen">
+      .wrap {
+        width: 100px;
+        height: 1000px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" class="btn btn-success" id="test1">ID test1</button>
+    <button type="button" class="btn btn-warning" id="test2">ID test2</button>
+    <button type="button" class="btn btn-success" id="test3">ID test3</button>
+    <button type="button" class="btn btn-warning" id="test4">ID test4</button>
+    <button type="button" class="btn btn-success" id="test5">ID test5</button>
+    <div class="wrap">
+
+    </div>
+  </body>
+  <script type="text/javascript">
+    $('#test1').on('click', function(){
+      layer.msg('ID test1');
+    });
+
+    // 弹出一个页面层
+    $('#test2').on('click',function(){
+      layer.open({
+        type: 1,
+        area: ['600px','360px'],
+        shadeClose: true, // 点击遮罩层关闭
+        content: '<div style="padding:20px;"><h1>ID test2</h1></div>'
+      });
+    });
+
+    //弹出一个iframe层
+    // $('#test3').on('click', function(){
+    //   layer.open({
+    //     type: 2,
+    //     title: '纪楠',
+    //     maxmin: true,//是否支持最大最小化
+    //     shadeClose: true, //点击遮罩关闭层
+    //     area : ['800px' , '520px'],
+    //     content: 'test001.html'
+    //   });
+    // });
+    $('#test3').on('click', function(){
+      layer.open({
+        type: 2,
+        title: false,
+        closeBtn: 0,
+        shadeClose: true, //点击遮罩关闭层
+        area : ['700px' , '500px'],
+        content: 'test000.html'
+      });
+    });
+
+    //弹出一个loading层
+    $('#test4').on('click', function(){
+      var ii = layer.load();
+      //此处用setTimeout演示ajax的回调
+      setTimeout(function(){
+      layer.close(ii);
+      }, 1000);
+    });
+
+    //弹出一个tips层
+    $('#test5').on('click', function(){
+      // 第一个参数是显示的内容  第二个参数是显示在谁的旁边
+      layer.tips('ID test5!', '#test5');
+    });
+
+
+
+  </script>
+</html>

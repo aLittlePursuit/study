@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>vue购物车</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/test001.css">
+</head>
+<body>
+
+<div class="container">
+      <table class="table">
+            <tr class="listName">
+                <th width="40%" class="text-center">商品信息</th>
+                <th width="15%" class="text-center">商品金额</th>
+                <th width="15%" class="text-center">商品数量</th>
+                <th width="15%" class="text-center">总金额</th>
+                <th width="15%" class="text-center">编辑</th>
+            </tr>
+          <tr v-for="(item,index) in productList">
+              <td>
+                  <div class="goods-info">
+                      <span class="circle" :class="{'check': item.checked}" @click="selectProduct(item)"></span>
+                      <img :src="item.productImage" width="100" alt="">
+                  </div>
+                  <div class="goods-info">
+                      <h4>{{ item.productName+"---"+index}}</h4>
+                      <h5>赠送：
+                          <span v-for="part in item.parts">{{ part.partsName }}</span>
+                      </h5>
+                  </div>
+              </td>
+              <td class="text-center">{{ item.productPrice | formatMoney('元') }}</td>
+              <td class="text-center">
+                    <div class="form-group">
+                        <button class="btn" @click="changeMoney(item,-1)">-</button>
+                        <input type="text" value="1" class="quentity" v-model="item.productQuentity">
+                        <button class="btn" @click="changeMoney(item,1)">+</button>
+                    </div>
+              </td>
+              <td class="text-center">{{ item.productPrice*item.productQuentity | formatMoney('元') }}</td>
+              <td class="text-center">
+                  <span data-toggle="modal" data-target="#modal" @click="confirm(item)">删除</span>
+              </td>
+          </tr>
+
+      </table>
+
+    <div class="clearfix">
+        <span class="circle" :class="{'check': checkAllFlag}" @click="checkAll(true)"></span>
+        <lable>全选</lable>
+        <span @click="checkAll(false)">取消全选</span>
+        <div class="pull-right">
+            <span>item total: {{ totalPrice | formatMoney('元') }}</span>
+            <span class="text-center payment">结账</span>
+        </div>
+    </div>
+
+    <!--删除选购物品的模态框-->
+    <div class="modal fade" id="modal">
+        <div class="modal-dialog center" >
+            <div class="modal-content">
+                <div class="modal-body padd text-center">你确认删除此信息吗？</div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#modal" @click="delProduct()">删 除</button>
+                    <button class="btn" data-toggle="modal" data-target="#modal">取 消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+<script src="../jq/jquery-1.9.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="../jq/vue.js"></script>
+<script src="../jq/vue-resource.js"></script>
+<script src="js/test001.js"></script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>处理用户输入</title>
+    <script src="jq/vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="example">
+      <p>{{ message }}</p>
+      <button type="button" v-on:click="reverseMessage">翻转</button>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#example',
+      data: {
+        message: 'hello world'
+      },
+      methods: {
+        reverseMessage: function() {
+          this.message = this.message.split('').reverse().join('')
+        }
+      }
+    });
+  </script>
+</html>
+<!--
+绑定监听事件的方式     v-on:事件名="事件函数名"
+绑定监听事件简写形式   @事件名="事件函数名"
+-->

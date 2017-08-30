@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-pro</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/vue.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="wrap">
+        <div v-for="every in data" class="media every-media">
+            <div class="media-left text-center user">
+                <img class="image" :src="every.author.avatar_url" />
+            </div>
+            <div class="media-body user user-text">
+                <h5 class="media-heading name" v-text="every.author.loginname"></h5>
+                <span class="time" v-text="every.create_at"></span>
+                <a class="talk form-control" v-text="every.title" href="pro002.html?111"></a>
+            </div>
+        </div>
+    </div>
+    <div class="page text-center"></div>
+</div>
+
+</body>
+<script src="../jq/jquery-1.9.1.js"></script>
+<script src="../jq/vue.js"></script>
+<script src="js/laypage/laypage.js"></script>
+<script>
+    $(function() {
+        var id = getUrlId();
+        var url = 'http://cnodejs.org/api/v1/topics?page='+id;
+        laypage({
+            cont: $(".page"),
+            pages: 530,
+            curr: id,
+            jump: function(e, first){
+                console.log(e)
+                if(!first){
+                    location.href = '?'+e.curr;
+                }
+            }
+        });
+
+        $.ajax({
+            url: url,
+            dataType: 'json',
+            success: function (result) {
+                console.log(result);
+                new Vue({
+                    el: '.wrap',
+                    data: result
+                });
+            }
+        });
+
+        function getUrlId(){
+            var host = window.location.href;
+            var id = host.substring(host.indexOf("?")+1,host.length);
+            return id;
+        }
+    });
+
+
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>处理用户输入</title>
+    <script src="jq/vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="example">
+      <p>{{ message }}</p>
+      <input type="text" v-model="message">
+    </div>
+  </body>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#example',
+      data: {
+        message: 'hello world'
+      }
+    });
+  </script>
+</html>
+<!--
+双向动态绑定 v-model="参数名"
+-->

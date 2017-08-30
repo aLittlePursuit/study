@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>feild2</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <div>设置校验状态</div>
+    <mt-field label="邮箱" state="success" v-model="email" placeholder="请输入邮箱"></mt-field>
+    <mt-field label="邮箱" state="error" v-model="email" placeholder="请输入邮箱"></mt-field>
+    <mt-field label="邮箱" state="warning" v-model="email" placeholder="请输入邮箱"></mt-field>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app',
+        data() {
+            return {
+                email: ''
+            }
+        }
+    });
+</script>
+</html>

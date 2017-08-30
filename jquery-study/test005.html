@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>slideDown()、slideUp()、slideToggle()</title>
+    <script src="jq/jquery-1.9.1.js" charset="utf-8"></script>
+    <style media="screen">
+      .slide {
+        width: 100px;
+        height: 200px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="">
+      <div id="slidedown" class="slide" style="display: none;"></div>
+      <button id="slideDown">slideDown</button>
+    </div>
+
+    <div class="">
+      <div id="slideup" class="slide"></div>
+      <button id="slideUp">slideUp</button>
+    </div>
+
+    <div class="">
+      <div id="slidetoggle" class="slide"></div>
+      <button id="slideToggle">slideToggle</button>
+    </div>
+
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $('#slideDown').click(function() {
+        $('#slidedown').slideDown();
+      });
+
+      $('#slideUp').click(function() {
+        $('#slideup').slideUp();
+      });
+
+      $('#slideToggle').click(function() {
+        $('#slidetoggle').slideToggle();
+      });
+
+    });
+  </script>
+</html>

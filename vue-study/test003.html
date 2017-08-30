@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>条件与循环</title>
+    <script src="jq/vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="example">
+      <p v-if="seen">
+       条件成立
+      </p>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#example',
+      data: {
+        seen: true
+      }
+    });
+  </script>
+</html>
+<!--
+条件式的绑定形式为 在开始标签中 v-if="参数名",如果seen为真的话才会显示p标签
+-->

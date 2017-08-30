@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>action1</title>
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <mt-button @click.native="handleClick">Button</mt-button>
+    <mt-actionsheet :actions="actions" v-model="show"></mt-actionsheet>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app',
+        data() {
+            return {
+                show: false
+            }
+        },
+        created() {
+            this.actions =  [                          //  菜单项数组
+                {'name': '确定','method': this.ok},
+                {'name': '打开相机','method': this.open},
+                {'name': '相册','method': this.photo}
+            ]
+        },
+        methods: {
+            handleClick() {
+                this.show = true
+            },
+            ok() {
+                this.$toast('确定')
+            },
+            open() {
+                this.$toast('打开相机')
+            },
+             photo() {
+                this.$toast('相册')
+            }
+        }
+    });
+</script>
+</html>

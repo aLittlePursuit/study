@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>swipe2</title>
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .swipe-wrapper {
+            width: 100%;
+            height: 200px;
+        }
+        .mint-swipe-item {
+            text-align: center;
+            line-height: 200px;
+            font-size: 30px;
+            color: #fff;
+        }
+        .mint-swipe-item:nth-child(1) {
+            background: orange;
+        }
+        .mint-swipe-item:nth-child(2) {
+            background: blue;
+        }
+        .mint-swipe-item:nth-child(3) {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div class="swipe-wrapper">
+        <!--:show-indicators="false" 设置不显示地下轮播点-->
+        <mt-swipe :show-indicators="false" :speed="5000" :default-index="2" >
+            <mt-swipe-item>1</mt-swipe-item>
+            <mt-swipe-item>2</mt-swipe-item>
+            <mt-swipe-item>3</mt-swipe-item>
+        </mt-swipe>
+    </div>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app'
+    });
+</script>
+</html>

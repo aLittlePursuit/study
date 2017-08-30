@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>buttom</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <div>
+        <h4>改变颜色</h4>
+        <mt-button type="default">default</mt-button>
+        <mt-button type="primary">primary</mt-button>
+        <mt-button type="danger">danger</mt-button>
+    </div>
+
+    <div>
+        <h4>改变大小</h4>
+        <mt-button size="small">small</mt-button>
+        <mt-button size="normal" type="primary">normal</mt-button>
+        <mt-button size="large" type="danger">large</mt-button>
+    </div>
+
+    <div>
+        <h4>禁用按钮</h4>
+        <mt-button disabled>disabled</mt-button>
+        <mt-button disabled type="primary">disabled</mt-button>
+        <mt-button disabled type="danger">disabled</mt-button>
+    </div>
+
+    <div>
+        <h4>幽灵按钮</h4>
+        <mt-button plain icon="back">plain</mt-button>
+        <mt-button plain type="primary">plain</mt-button>
+        <mt-button plain type="danger">plain</mt-button>
+    </div>
+
+    <div>
+        <mt-button plain type="danger">
+            <div slot="icon">
+                <img src="test.jpg" width="24" height="24" alt="">
+            </div>
+        </mt-button>
+    </div>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app'
+    });
+</script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>demo1</title>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/bscroll.js"></script>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background: orange;
+            overflow: hidden;
+        }
+        .list-wrapper {
+            display: inline-block; /*宽度自适应必须inline-block*/
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            white-space: nowrap;
+        }
+        .list {
+            display: inline-block;
+            margin-right: 30px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <!--两层嵌套div和ol,li标签内容去撑高ol-->
+    <div class="main" id="main">
+        <ol class="list-wrapper">
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+        </ol>
+    </div>
+
+
+<script>
+    /**
+     * 实际上这个Bscroll的方法是加载#main的children上的，也就是ol
+     * 默认是Y轴方向
+     * */
+    $(function() {
+        new BScroll(document.getElementById('main'), {
+            scrollX: true      // 定义在X轴方向滚动
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+    <script src="jq/velocity.min.js"></script>
+</head>
+<body>
+<!--v-if 和 v-show的区别就在于if判断条件如果为假则删除整个标签（既标签不存在）
+v-show则是如果条件为假则样式display：none；-->
+<div id="test">
+    <div v-if="msg > 10">show or hide</div>
+    <div v-else>我是否则</div>
+</div>
+<!--v-if  v-else-if  v-else-->
+
+</body>
+<script>
+    $(function() {
+        new Vue({
+            el: '#test',
+            data: {
+                msg: 11
+            }
+        });
+    });
+</script>
+</html>

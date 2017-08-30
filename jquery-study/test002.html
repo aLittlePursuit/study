@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hide()、show()</title>
+    <script src="jq/jquery-1.9.1.js" charset="utf-8"></script>
+    <style media="screen">
+      div {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+
+    <p>12345678910</p>
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $("#hide").click(function(){
+        $('p').hide();
+      });
+
+      $("#show").click(function(){
+        $('p').show();
+      });
+
+    });
+  </script>
+</html>
+<!-- 语法：$(selector).hide(speed,callback); -->

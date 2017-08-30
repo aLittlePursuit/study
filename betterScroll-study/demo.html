@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>demo</title>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/bscroll.js"></script>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            width: 100%;
+            height: 400px;
+            background: orange;
+            overflow: hidden;
+        }
+        .list {
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!--两层嵌套div和ol,li标签内容去撑高ol-->
+    <div class="main" id="main">
+        <ol class="list-wrapper">
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+            <li class="list">666</li>
+        </ol>
+    </div>
+
+
+    <script>
+        /**
+         * 实际上这个Bscroll的方法是加载#main的children上的，也就是ol
+         * 默认是Y轴方向
+         * */
+        $(function() {
+            new BScroll(document.getElementById('main'));
+        });
+    </script>
+</body>
+</html>

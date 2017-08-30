@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+    <script src="jq/velocity.min.js"></script>
+    <style>
+        .aaa {
+            font-size: 50px;
+            margin: 10px 0;
+        }
+
+        .bbb {
+            background-color: red;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="test">
+    <div :class="[tit, tit2]">第一个</div>
+    <div :class="{aaa: msg, bbb: msg2}">第二个</div>
+    <div :class="[tit, {bbb: msg2}]">第三个</div>
+</div>
+
+</body>
+<script>
+    $(function() {
+        new Vue({
+            el: '#test',
+            data: {
+                tit: 'aaa',
+                tit2: 'bbb',
+                msg: false,
+                msg2: true
+            }
+        });
+    });
+</script>
+</html>

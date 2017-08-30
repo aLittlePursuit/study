@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>v-html</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+    <script src="jq/velocity.min.js"></script>
+</head>
+<body>
+    <!--在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 XSS 攻击。只在可信内容上使用 v-html，
+    永不用在用户提交的内容上。-->
+    <div id="test">
+        <div v-html="msg"></div>
+    </div>
+
+</body>
+<script>
+    $(function() {
+        new Vue({
+            el: '#test',
+            data: {
+                msg: '<h3>你好世界！</h3>'
+            }
+        });
+    });
+</script>
+</html>

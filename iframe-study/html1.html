@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>html2</title>
+    <script src="jquery-1.9.1.js"></script>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="html1">
+
+        <iframe id="iframeId" src="html2.html" width="100%" frameborder="0"></iframe>
+
+    </div>
+
+    <script>
+      // 页面完全记载完成后得到iframe内元素的高度赋值给iframe标签实现iframe自适应高度
+      $(window).load(function(){
+        var _iframe = document.getElementById("iframeId");
+        var _iframeContentWindow = _iframe.contentWindow;
+        var _html2 = _iframeContentWindow.document.getElementById('html2');
+        console.log(_html2.clientHeight);
+        $('#iframeId').css('height',_html2.clientHeight + 'px');
+      });
+    </script>
+</body>
+</html>

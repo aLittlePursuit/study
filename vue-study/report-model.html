@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>报告模板</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <script src="jq/jquery-1.9.1.js" charset="utf-8"></script>
+    <script src="jq/vue.js" charset="utf-8"></script>
+    <style media="screen">
+      .report-all {
+        padding: 5px 15px;
+        margin: 15px 0;
+        background-color: #e7ebee;
+        border-radius: 4px;
+      }
+
+      .report-all p {
+        color: gray;
+      }
+
+      .report-input {
+        margin: 15px 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="report-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="report-all">
+              <h3 class="text-center"><b>{{ title }}</b></h3>
+              <p class="report-content">{{ content }}</p>
+              <p class="text-right">{{ name }}</p>
+              <p class="text-right">{{ date }}</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="report-input">
+              <div class="form-group">
+                <input v-model="title" class="form-control" type="text" placeholder="请输入标题">
+              </div>
+              <div class="form-group">
+                <textarea v-model="content" class="form-control" rows="5" placeholder="请输入内容"></textarea>
+              </div>
+              <div class="form-group">
+                <input v-model="name" class="form-control" type="text" placeholder="请输入姓名">
+              </div>
+              <div class="form-group">
+                <input v-model="date" class="form-control" type="date" placeholder="请选择日期">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="text-right">
+          <button @click="submit" class="btn btn-success" type="button">提 交</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var vm = new Vue({
+      el: '#report-text',
+      data: {
+        title: '',
+        content: '',
+        name: '',
+        date: ''
+      },
+      methods: {
+        submit: function(e) {
+          console.log(vm.title);
+          console.log(vm.content);
+          console.log(vm.name);
+          console.log(vm.date);
+        }
+      }
+    });
+
+  </script>
+</html>

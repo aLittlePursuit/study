@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+</head>
+<body>
+    <div id="div1"><h2>hello world!</h2></div>
+    <button id="btn1">获得外部内容load()</button>
+</body>
+<script>
+    $(document).ready(function() {
+        $("button").click(function(){
+            $("#div1").load("txt/test000.txt",function(responseTxt,statusTxt,xhr){
+                if(statusTxt=="success")
+                    alert("外部内容加载成功！");
+                if(statusTxt=="error")
+                    alert("Error: "+xhr.status+": "+xhr.statusText);
+            });
+        });
+    });
+</script>
+</html>
+<!--
+可选的 callback 参数规定当 load() 方法完成后所要允许的回调函数。回调函数可以设置不同的参数：
+responseTxt - 包含调用成功时的结果内容
+statusTxt - 包含调用的状态
+xhr - 包含 XMLHttpRequest 对象
+-->

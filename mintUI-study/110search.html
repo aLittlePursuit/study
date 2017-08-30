@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>search</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .mint-search {
+            height: auto;
+        }
+        .mint-search-list {
+            bottom: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div>
+        <!--<h4>带搜索结果</h4>-->
+        <mt-search v-model="value" :result.sync="result"></mt-search>
+        <div>test</div>
+    </div>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+<script>
+    var vm = new Vue ({
+        el: '#app',
+        data() {
+            return {
+                value: '',
+                result: [
+                    '1','2','3'
+                ]
+            }
+        }
+    });
+</script>
+</html>

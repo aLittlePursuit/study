@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>计算属性</title>
+    <script src="jq/vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="example">{{ fullName }}</div>
+  </body>
+  <script type="text/javascript">
+    var vm = new Vue({
+      el: '#example',
+      data: {
+        firstName: 'Foo',
+        lastName: 'Bar'
+      },
+      computed: {
+        fullName: function() {
+            /*只能用this.firstName不能用vm.firstName*/
+          return this.firstName + '...' + this.lastName
+        }
+      }
+    });
+  </script>
+</html>

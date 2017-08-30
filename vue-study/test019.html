@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>单选按钮</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <input type="radio" id="one" value="One" v-model="picked">
+        <label for="One">aaa</label>
+        <br>
+        <input type="radio" id="two" value="Two" v-model="picked">
+        <label for="two">Two</label>
+        <br>
+        <span>Picked: {{ picked }}</span>
+    </div>
+</body>
+<script>
+    $(function() {
+        var vm = new Vue({
+            el: '#test',
+            data: {
+                picked: ''
+            }
+        });
+    });
+</script>
+</html>

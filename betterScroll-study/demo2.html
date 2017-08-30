@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>demo2</title>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/bscroll.js"></script>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background: orange;
+            overflow: hidden;
+        }
+        .list-wrapper {
+            display: inline-block;  /*宽度自适应必须inline-block*/
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            white-space: nowrap;
+        }
+        .list {
+            display: inline-block;
+            padding-right: 30px;
+            vertical-align: top;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<!--两层嵌套div和ol,li标签内容去撑高ol-->
+<div class="main" id="main">
+    <ol class="list-wrapper">
+        <li class="list" onclick="testClick($(this), event)">1</li>
+        <li class="list" onclick="testClick($(this), event)">2</li>
+        <li class="list" onclick="testClick($(this), event)">3</li>
+        <li class="list" onclick="testClick($(this), event)">1</li>
+        <li class="list" onclick="testClick($(this), event)">2</li>
+        <li class="list" onclick="testClick($(this), event)">3</li>
+        <li class="list" onclick="testClick($(this), event)">1</li>
+        <li class="list" onclick="testClick($(this), event)">2</li>
+        <li class="list" onclick="testClick($(this), event)">3</li>
+        <li class="list" onclick="testClick($(this), event)">1</li>
+        <li class="list" onclick="testClick($(this), event)">2</li>
+        <li class="list" onclick="testClick($(this), event)">3</li>
+        <li class="list" onclick="testClick($(this), event)">1</li>
+        <li class="list" onclick="testClick($(this), event)">2</li>
+        <li class="list" onclick="testClick($(this), event)">3</li>
+        <li class="list" onclick="testClick($(this), event)">1</li>
+        <li class="list" onclick="testClick($(this), event)">2</li>
+        <li class="list" onclick="testClick($(this), event)">3</li>
+        <li class="list" onclick="testClick($(this), event)">1</li>
+        <li class="list" onclick="testClick($(this), event)">2</li>
+        <li class="list" onclick="testClick($(this), event)">3</li>
+        <li class="list" onclick="testClick($(this), event)">1</li>
+        <li class="list" onclick="testClick($(this), event)">2</li>
+        <li class="list" onclick="testClick($(this), event)">3</li>
+        <li class="list" onclick="testClick($(this), event)">1</li>
+        <li class="list" onclick="testClick($(this), event)">2</li>
+        <li class="list" onclick="testClick($(this), event)">3</li>
+        <li class="list" onclick="testClick($(this), event)">1</li>
+        <li class="list" onclick="testClick($(this), event)">2</li>
+        <li class="list" onclick="testClick($(this), event)">3</li>
+        <li class="list" onclick="testClick($(this), event)">1</li>
+        <li class="list" onclick="testClick($(this), event)">2</li>
+        <li class="list" onclick="testClick($(this), event)">3</li>
+        <li class="list" onclick="testClick($(this), event)">1</li>
+        <li class="list" onclick="testClick($(this), event)">2</li>
+        <li class="list" onclick="testClick($(this), event)">3</li>
+        <li class="list" onclick="testClick($(this), event)">1</li>
+        <li class="list" onclick="testClick($(this), event)">2</li>
+        <li class="list" onclick="testClick($(this), event)">3</li>
+    </ol>
+</div>
+
+
+<script>
+    /**
+     * 实际上这个Bscroll的方法是加载#main的children上的，也就是ol
+     * scrollX: true  定义在X轴方向滚动，默认false
+     * scrollY: true  定义在Y轴方向滚动，默认true
+     * deceleration: 0.001 滚动动量减速越大越快，建议不大于0.01,调整滚动速度
+     * momentumLimitTime: 300 符合惯性拖动的最大时间
+     * momentumLimitDistance: 15 符合惯性拖动的最小拖动距离
+     * click: true    是否派发click事件,默认为false
+     * click: true    派发点击事件,在移动端触发可以触发点击事件,但是在调试的时候，pc端页面是时候
+     * 后激发两次点击事件，所以需要判断是自身的点击事件还是插件派发的点击事件,默认false
+     * momentum: true 当快速滑动时是否开启滑动惯性,默认true
+     * bounce: true   是否启用回弹动画效果，默认true
+     * bounceTime: 7000 弹力动画持续的毫秒数
+     * snap: true,snapLoop: true  同时设置为true，可无限循环滑动，默认为false
+     * snapThreshold: 0.1 用手指滑动时页面可切换的阈值，大于这个阈值可以滑动的下一页
+     * probeType: 1 会截流,只有在滚动结束的时候派发一个 scroll 事件。
+     *            2 在手指 move 的时候也会实时派发 scroll 事件，不会截流。
+     *            3 除了手指 move 的时候派发scroll事件，在 swipe（手指迅速滑动一小段距离）的情况下，
+     *             列表会有一个长距离的滚动动画，这个滚动的动画过程中也会实时派发滚动事件
+     * */
+    $(function() {
+        new BScroll(document.getElementById('main'), {
+            scrollX: true,
+            click:   true
+        });
+    });
+
+    function testClick(obj, event) {
+        // 如果不存在这个属性,则为原生点击事件，不执行下面的函数
+        if(!event._constructed) {
+            return;
+        }
+        console.log(event._constructed);
+        console.log(obj.html());
+    }
+</script>
+</body>
+</html>

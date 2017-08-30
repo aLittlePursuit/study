@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>异步更新队列</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/vue.js"></script>
+</head>
+<body>
+    <div id="test">{{ message }}</div>
+</body>
+<script>
+    $(function() {
+        var vm = new Vue({
+            el: '#test',
+            data: {
+                message: '123'
+            }
+        });
+
+        vm.message = 'new message';
+        vm.$el.textContent === 'new message';
+        Vue.nextTick(function() {
+            vm.$el.textContent === 'new message';
+        });
+    });
+</script>
+</html>
