@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax-post</title>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <h3>jquery ajax发送一个post请求，数据返回为jsonp</h3>
+    <h4>实战中最常用到的ajax方式提交数据，提交一般用post方式</h4>
+    <div class="content"></div>
+    <button class="ajax">ajax请求</button>
+</body>
+<script>
+    $(function() {
+        var content = $('.content');
+        var ajax = $('.ajax');
+        ajax.click(function() {
+            $.ajax({
+                type: "POST",
+                url: "http://mai.17173.com/commodity/material/random/list/11382/1/9.jsonp",
+                dataType:'jsonp',
+                data: {id:1001},//也可以是字符串链接"id=1001"，建议用对象
+                success: function(data){
+                    console.log(data);
+                }
+            });
+        });
+    });
+</script>
+</html>

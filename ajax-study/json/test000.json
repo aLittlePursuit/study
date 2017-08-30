@@ -1,0 +1,42 @@
+[
+  {
+    "code": "READ_FILE",
+    "role_id": 2
+  },
+  {
+    "code": "READ_FILE",
+    "role_id": 3
+  },
+  {
+    "code": "READ_FILE",
+    "role_id": 4
+  },
+  {
+    "code": "READ_FILE",
+    "role_id": 5
+  },
+  {
+    "code": "READ_FILE",
+    "role_id": 7
+  },
+  {
+    "code": "READ_FILE",
+    "role_id": 8
+  },
+  {
+    "code": "WRITE_FILE",
+    "role_id": 2
+  },
+  {
+    "code": "REVIEW_FILE",
+    "role_id": 7
+  },
+  {
+    "code": "APPROVE_FILE",
+    "role_id": 5
+  },
+  {
+    "code": "DEL_OFFICIAL_FILE",
+    "role_id": 2
+  }
+]

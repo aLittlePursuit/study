@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="js/jquery-1.9.1.js"></script>
+    <style>
+        .cell {
+            display: inline-block;
+            width: 300px;
+            background-color: aqua;
+            border-radius: 4px;
+            text-align: center;
+            padding: 40px 20px;
+            margin: 20px 20px;
+            overflow: hidden;
+        }
+        h3 {
+            height: 50px;
+            overflow: hidden;
+        }
+        img {
+            width; 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+</body>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "http://mai.17173.com/commodity/material/random/list/11382/1/9.jsonp",
+            dataType: 'jsonp',
+            success: function(result) {
+                console.log(result);
+//                console.log(result.data.listData[0].mainTitle);
+//                console.log(result['data']['listData'][0].mainTitle);
+//                for(var i = 0; i < result.data.listData.length; i++) {
+//                    var $data = result.data.listData[i];
+//                    $('#test').append('<h3>'+$data.mainTitle+'</h3>');
+//                    $('#test').append('<img src='+$data.listNormalImage+' />');
+//                    $('#test').append('<h4>'+$data.sellingPrice+'元</h4>');
+//                }
+                $.each(result.data.listData,function(i,item) {
+                    $('#test').append('<div class="cell"><h3>'+item.mainTitle+'</h3><img src='+item.listNormalImage+' /><h4>'+item.sellingPrice+'元</h4></div>');
+                });
+            }
+        });
+
+    });
+</script>
+</html>
+<!--
+当请求无副作用时（如进行搜索），便可使用GET方法；当请求有副作用时（如添加数据行），
+则用POST方法。一个比较实际的问题是：GET方法可能会产生很长的URL，或许会超过某些浏
+览器与服务器对URL长度的限制。
+
+若符合下列任一情况，则用POST方法：
+* 请求的结果有持续性的副作用，例如，数据库内添加新的数据行。
+* 若使用GET方法，则表单上收集的数据可能让URL过长。
+* 要传送的数据不是采用7位的ASCII编码。
+
+若符合下列任一情况，则用GET方法：
+* 请求是为了查找资源，HTML表单数据仅用来帮助搜索。
+* 请求结果无持续性的副作用。
+* 收集的数据及HTML表单内的输入字段名称的总长不超过1024个字符。
+-->

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="test"></div>
+</body>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: 'json/test006.json',
+            dataType: 'json',
+            success: function(result) {
+                $.each(result.ageConfigList,function (i,item) {
+                    console.log(item);
+                    $('.test').append('<h3>'+item.id+'</h3>')
+                    $('.test').append('<h4>'+item.maxAge+'</h4>')
+                });
+                $.each(result.templateServes,function (i,item) {
+                    console.log(item);
+                });
+            }
+        });
+    });
+</script>
+
+<!--<script type="text/javascript">-->
+    <!--$().ready(-->
+        <!--function(){-->
+            <!--var anObject = {one:1,two:2,three:3};//对json数组each-->
+            <!--$.each(anObject,function(name,value) {-->
+                <!--console.log(name+': '+value);-->
+            <!--});-->
+            <!--var anArray = ['one','two','three'];-->
+            <!--$.each(anArray,function(n,value){-->
+                <!--console.log(n+': '+value);-->
+                <!--}-->
+            <!--);-->
+        <!--}-->
+    <!--);-->
+<!--</script>-->
+</html>

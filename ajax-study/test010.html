@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>post</title>
+    <script src="js/jquery-1.9.1.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    $(document).ready(function() {
+        $.post('json/test002.json',{aaa:'aaa',bbb:'bbb'},function(result) {
+            console.log(result);
+        });
+    });
+</script>
+</html>
+<!--post一般用于携带数据向上请求-->

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="test">
+    <div class="cell">
+        <h3>{{ title }}</h3>
+        <h4>{{ sprice }}元</h4>
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function() {
+        var vm = new Vue({
+            el: '#test',
+            data: {
+                title: '标题',
+                sprice: '价格'
+            },
+            todos: []
+        });
+        $.ajax({
+            url: "json/test000.json",
+            dataType: 'json',
+            success: function(result) {
+                vm.title = result[0].code;
+                vm.sprice = result[0].role_id;
+            }
+        });
+    });
+</script>
+</html>

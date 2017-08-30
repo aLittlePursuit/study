@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax-get</title>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <h3>jquery ajax发送一个get请求，简写方式：</h3>
+    <h4>其实就是对ajax的二次封装，大家可以对照ajax的底层api</h4>
+    <div class="content"></div>
+    <button class="ajax">ajax请求</button>
+</body>
+<script>
+    $(function() {
+        var content = $('.content');
+        var ajax = $('.ajax');
+        ajax.click(function() {
+            //$.get("请求url","发送的数据对象","成功回调","返回数据类型");
+            $.get("http://mai.17173.com/commodity/material/random/list/11382/1/9.jsonp",{ name: "John", time: "2pm" },
+                function(data){
+                    console.log(data);
+                },'jsonp');
+        });
+    });
+</script>
+</html>

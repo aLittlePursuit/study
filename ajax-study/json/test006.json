@@ -1,0 +1,54 @@
+{
+  "ageConfigList": [
+    {
+      "id": 1,
+      "maxAge": 35,
+      "minAge": 28,
+      "remark": "28-35",
+      "timestampCreate": 1479181812000,
+      "timestampUpdate": 1487576070000
+    },
+    {
+      "id": 3,
+      "maxAge": 40,
+      "minAge": 36,
+      "remark": "36-40",
+      "timestampCreate": 1479188446000,
+      "timestampUpdate": 1487576113000
+    },
+    {
+      "id": 4,
+      "maxAge": 45,
+      "minAge": 41,
+      "remark": "41-45",
+      "timestampCreate": 1479188456000
+    },
+    {
+      "id": 5,
+      "maxAge": 48,
+      "minAge": 45,
+      "remark": "45-48",
+      "timestampCreate": 1479188470000
+    }
+  ],
+  "templateServes": [
+    {
+      "defaultCount": 2,
+      "id": 6,
+      "money": 10,
+      "serveDefImage": "http://cloudtraveler.oss-cn-shanghai.aliyuncs.com/106/71d5c0556a0168e76eb4901d2724aa18",
+      "serveId": 1,
+      "serveImage": "http://cloudtraveler.oss-cn-shanghai.aliyuncs.com/106/156abfbc4e37a938051e786702fdc2bf",
+      "serveName": "心里咨询",
+      "templateContentName": "月嫂模版",
+      "templateId": 3,
+      "timestampCreate": 1480067235000
+    },
+    {
+      "defaultCount": 1,
+      "id": 7,
+      "money": 15,
+      "serveDefImage": "http://cloudtraveler.oss-cn-shanghai.aliyuncs.com/106/f5c526d735"
+    }
+  ]
+}

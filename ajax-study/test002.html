@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <div class="cell">
+            <h3>{{ title }}</h3>
+            <img :src="link" alt="图片">
+            <h4>{{ sprice }}元</h4>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        var vm = new Vue({
+            el: '#test',
+            data: {
+                title: '标题',
+                link: '图片',
+                sprice: '价格'
+            }
+        });
+        $.ajax({
+            url: "http://mai.17173.com/commodity/material/random/list/11382/1/9.jsonp",
+            dataType: 'jsonp',
+            success: function(result) {
+                var $data = result.data.listData[0];
+                vm.title = $data.mainTitle;
+                vm.link = $data.listNormalImage;
+                vm.sprice = $data.sellingPrice;
+            }
+        });
+    });
+</script>
+</html>

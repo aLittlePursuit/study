@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>get</title>
+    <script src="js/jquery-1.9.1.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    $(document).ready(function() {
+        $.get('json/test001.json',function(result) {
+            console.log(result);
+        });
+    });
+</script>
+</html>
+<!--get一般用于数据向下请求（既想页面请求数据）-->

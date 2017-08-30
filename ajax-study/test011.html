@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="js/jquery-1.9.1.js"></script>
+
+</head>
+<body>
+    <div id="authority">
+        <input type="checkbox" checked="" rolecode="aaa" privilegecode="bbb">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+    </div>
+</body>
+<script>
+    $(function() {
+        $("#authority input[type='checkbox']").each(function () {
+            if($("input[type='checkbox']").is(':checked')){
+                $(this).change(function () {
+                    str = $(this).attr("rolecode")+ "-"+$(this).attr("privilegecode")+","+1+";";
+                    console.log(str)
+                    alert(typeof(str))
+                })
+            }
+        })
+    });
+</script>
+</html>
