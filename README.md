@@ -1,2 +1,2 @@
 # study
-*Ñ§Ï°¼ÇÂ¼
+* Record my study
