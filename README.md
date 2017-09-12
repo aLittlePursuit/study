@@ -1,2 +1,2 @@
 # study
-* Record my study demo
+> Record my study demo
